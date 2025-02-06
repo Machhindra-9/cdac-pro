@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mywebsite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mywebsite
+  template:
+    metadata:
+      labels:
+        app: mywebsite
+    spec:
+      containers:
+        - name: my-app
+          image: machhindrakangane/machhindrakangane-receipe # Use your local image name here
+          ports:
+            - containerPort: 8000
+
